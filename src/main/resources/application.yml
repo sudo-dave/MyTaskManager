@@ -1,0 +1,21 @@
+# Docs => https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
+# We use this to congifure a Spring application; --> kinda like package.json for Node
+# Could be a YAML or applications.properties
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5332/Todo
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+      show-sql: true
+  main:
+      web-application-type: servlet
+
+server:
+  port: 8080
