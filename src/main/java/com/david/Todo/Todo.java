@@ -43,7 +43,6 @@ public class Todo {
     private Boolean isCompleted;
 
     public Todo(LocalDateTime createdAt, String text, Boolean isCompleted) {
-        this.id = id;
         this.createdAt = createdAt;
         this.text = text;
         this.isCompleted = isCompleted;
