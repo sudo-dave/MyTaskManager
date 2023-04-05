@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class Main {
@@ -17,9 +19,13 @@ public class Main {
     CommandLineRunner commandLineRunner(
             TodoRepository todoRepository) {
         return args -> {
+            List<Todo> todoList = new ArrayList<>();
             LocalDateTime now = LocalDateTime.now();
             Todo test = new Todo(now,"yoo",true);
-            todoRepository.save(test);
+            todoList.add(test);
+            Todo test2 = new Todo(now,"okThen",false);
+            todoList.add(test2);
+            todoRepository.saveAll(todoList);
         };
     }
 }
