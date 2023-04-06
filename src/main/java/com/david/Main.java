@@ -21,9 +21,9 @@ public class Main {
         return args -> {
             List<Todo> todoList = new ArrayList<>();
             LocalDateTime now = LocalDateTime.now();
-            Todo test = new Todo(now,"yoo",true);
+            Todo test = new Todo(now,"Hello",true);
             todoList.add(test);
-            Todo test2 = new Todo(now,"okThen",false);
+            Todo test2 = new Todo(now,"World",false);
             todoList.add(test2);
             todoRepository.saveAll(todoList);
         };
