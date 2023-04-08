@@ -11,6 +11,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/Todos")
 public class TodoController {
+
+    //constructor dependency injection; why use that instead of 
     @Autowired
     private TodoService todoService;
     @GetMapping
@@ -89,7 +91,4 @@ public class TodoController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-
-
 }
