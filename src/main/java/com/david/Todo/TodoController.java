@@ -13,8 +13,13 @@ import java.util.Optional;
 public class TodoController {
 
     //constructor dependency injection; why use that instead of 
+    private final TodoService todoService;
+
     @Autowired
-    private TodoService todoService;
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
+
     @GetMapping
     public ResponseEntity<List<Todo>> getTodos(){
         try{

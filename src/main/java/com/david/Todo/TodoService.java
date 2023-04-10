@@ -8,8 +8,12 @@ import java.util.Optional;
 
 @Service
 public class TodoService {
+    private final TodoRepository todoRepository;
+
     @Autowired
-    private TodoRepository todoRepository;
+    public TodoService(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
+    }
 
     public List<Todo> getAllTodos(){
         return todoRepository.findAll();
